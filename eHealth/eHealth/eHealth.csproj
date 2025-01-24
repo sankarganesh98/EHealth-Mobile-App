@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+		<ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AndroidUseAapt2>true</AndroidUseAapt2>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Accord.NET for Machine Learning -->
+
+		<!-- Community Toolkit MVVM for MVVM pattern -->
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+
+		<!-- CsvHelper for CSV file handling -->
+
+		<!-- Microcharts for charting in Xamarin.Forms -->
+		<PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+
+		<!-- Microsoft Dependency Injection Abstractions -->
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+
+		<!-- ML.NET for Machine Learning -->
+
+		<!-- MySQL Connector and Data Access -->
+
+		<!-- Newtonsoft.Json for JSON handling -->
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+
+		<!-- OxyPlot for plotting in Xamarin.Forms -->
+		<PackageReference Include="OxyPlot.Xamarin.Forms" Version="2.1.0" />
+
+		<!-- MVVM Helpers -->
+		<PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+
+		<!-- SQLite-net PCL for SQLite database access -->
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+
+		<!-- System.Runtime.Loader (although this is not typically used in Xamarin projects) -->
+		<PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+
+		<!-- Messaging plugin for Xamarin -->
+		<PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
+
+		<!-- Xamarin.Forms framework -->
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2662" />
+
+		<!-- Xamarin Essentials for accessing native APIs -->
+		<PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Project References -->
+		<ProjectReference Include="..\..\eHealth.Data\eHealth.Data.csproj" />
+		<ProjectReference Include="..\..\eHealth.Service\eHealth.Service.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- XAML and Code-Behind File Association -->
+		<Compile Update="Views\AddUserDetailsPage.xaml.cs">
+			<DependentUpon>AddUserDetailsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\AddEmergencyContactPage.xaml.cs">
+			<DependentUpon>AddEmergencyContactPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\EContactDetailPage.xaml.cs">
+			<DependentUpon>EContactDetailPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\UserPage.xaml.cs">
+			<DependentUpon>UserPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\EContactPage.xaml.cs">
+			<DependentUpon>EContactPage.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- XAML Resource Files -->
+		<EmbeddedResource Update="Views\EmergencyPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Views\ModifyEContactDetailPage.xaml">
+			<Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>

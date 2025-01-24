@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:eHealth.ViewModels"
+             Title="Emergency Assistance"
+             x:Class="eHealth.Views.EmergencyPage">
+
+    <ContentPage.BindingContext>
+        <vm:EmergencyViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20">
+            
+
+            <!-- Instructions -->
+            <Label Text="In case of an emergency, please press the button below to send an alert to your emergency contacts."
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <Label Text="This alert will notify your emergency contacts that you may need urgent assistance. Please use this feature only in serious situations."
+                   FontSize="Small"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <!-- Emergency Button -->
+            <Frame Padding="0"
+       CornerRadius="100"
+       HasShadow="True"
+       HeightRequest="200"
+       WidthRequest="200"
+       HorizontalOptions="Center"
+       VerticalOptions="CenterAndExpand"
+       BackgroundColor="Red">
+                <Button Text="Emergecy !"
+            TextColor="White"
+            FontSize="Large"
+            FontAttributes="Bold"
+            BackgroundColor="Transparent"
+            Command="{Binding EmergencyCommand}"/>
+            </Frame>
+
+
+            <!-- Confirmation Message -->
+            <Label Text="By pressing the button, you confirm that this is a genuine emergency."
+                   FontSize="Small"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   Margin="0,10,0,0"/>
+
+            <!-- Status Message -->
+            <Label Text="{Binding EmergencyStatusMessage}"
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

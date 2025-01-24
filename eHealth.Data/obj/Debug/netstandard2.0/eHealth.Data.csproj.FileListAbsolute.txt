@@ -1,0 +1,11 @@
+C:\Users\balar\source\repos\eHealth\eHealth.Data\bin\Debug\netstandard2.0\eHealth.Data.deps.json
+C:\Users\balar\source\repos\eHealth\eHealth.Data\bin\Debug\netstandard2.0\eHealth.Data.dll
+C:\Users\balar\source\repos\eHealth\eHealth.Data\bin\Debug\netstandard2.0\eHealth.Data.pdb
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.csproj.AssemblyReference.cache
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.AssemblyInfoInputs.cache
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.AssemblyInfo.cs
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.csproj.CoreCompileInputs.cache
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.sourcelink.json
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.dll
+C:\Users\balar\source\repos\eHealth\eHealth.Data\obj\Debug\netstandard2.0\eHealth.Data.pdb

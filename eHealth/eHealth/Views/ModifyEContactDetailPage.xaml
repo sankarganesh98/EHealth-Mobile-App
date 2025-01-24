@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eHealth.Views.ModifyEContactDetailPage"
+             Title="Edit Contact"
+             xmlns:local="clr-namespace:eHealth.ViewModels"
+             x:DataType="local:ModifyEContactDetailViewModel">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Name" FontSize="Medium" />
+            <Entry Text="{Binding Name}" FontSize="Medium" />
+
+            <Label Text="Relationship" FontSize="Medium" />
+            <Entry Text="{Binding Relationship}" FontSize="Medium" />
+
+            <Label Text="Email" FontSize="Medium" />
+            <Entry Text="{Binding Email}" FontSize="Medium" />
+
+            <Label Text="Phone Number" FontSize="Medium" />
+            <Entry Text="{Binding PhoneNumber}" FontSize="Medium" />
+
+            <Button Text="Save" Command="{Binding SaveCommand}" />
+            <Button Text="Cancel" Command="{Binding CancelCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

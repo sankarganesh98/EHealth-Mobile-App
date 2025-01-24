@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eHealth.Views.EContactPage"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:eHealth.ViewModels"
+             xmlns:model="clr-namespace:eHealth.Data.Models;assembly=eHealth.Data"
+             x:DataType="local:EContactViewModel"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddContactCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <RefreshView Command="{Binding LoadContactsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="EContactsListView"
+                        ItemsSource="{Binding Contacts}"
+                        SelectionMode="None"
+                        Margin="10"
+                        ItemSizingStrategy="MeasureAllItems">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type local:EContactViewModel}}, Path=DeleteContactCommand}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Frame Margin="10,10,10,10" Padding="10" BorderColor="LightGray" CornerRadius="10" HasShadow="True">
+                            <StackLayout Orientation="Vertical" x:DataType="model:EmergencyContacts">
+                                <!-- Contact Name and Relationship in a Grid -->
+                                <Grid Margin="10,10,10,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Contact Name -->
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" 
+                                           FontAttributes="Bold" FontSize="18" TextColor="#333" />
+                                    <!-- Relationship -->
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Relationship}" 
+                                           FontSize="16" TextColor="#666" />
+                                </Grid>
+
+                                <!-- Tap Gesture Recognizer -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:EContactViewModel}}, Path=ContactTapped}"
+                                        CommandParameter="{Binding .}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+
+</ContentPage>

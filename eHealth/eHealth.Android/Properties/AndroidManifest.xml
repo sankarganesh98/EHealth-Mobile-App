@@ -1,0 +1,41 @@
+﻿<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.companyname.ehealth"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:installLocation="preferExternal">
+
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+	<application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="eHealth.Android"
+        android:theme="@style/MainTheme"
+        android:debuggable="true">
+		<!-- Add this line -->
+
+		<service
+            android:name=".Services.AccelerometerService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+		<receiver
+            android:name=".Services.RestartServiceReceiver"
+            android:enabled="true"
+            android:exported="false" />
+	</application>
+</manifest>

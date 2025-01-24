@@ -1,0 +1,29 @@
+﻿using eHealth.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using eHealth.Data.Models;
+using eHealth.Data;
+using eHealth.Service;
+
+namespace eHealth.Views
+{
+    public partial class AddUserDetailsPage : ContentPage
+    {
+
+        public AddUserDetailsPage()
+        {
+            InitializeComponent();
+            BindingContext = new AddUserDetailsViewModel();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var viewModel = BindingContext as AddUserDetailsViewModel;
+            viewModel.SaveCommand.Execute(viewModel);
+
+        }
+    }
+}
